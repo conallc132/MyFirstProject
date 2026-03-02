@@ -1,48 +1,41 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-class Job {
-    public static function all():array
-    {
-        return [
-            [    
-                'id' => 1,
-                'title' => 'Manager',
-                'Salary' => '50,000'
-            ],
-            [    
-                'id' => 2,
-                'title' => 'Engineer',
-                'Salary' => '40,000'
-            ],
-            [    
-                'id' => 3,
-                'title' => 'Technician',
-                'Salary' => '32,000'
-            ]
-
-            
-        ];
-    }
-}
+use Illuminate\Support\Arr;
 
 Route::get('/', function () {
     return view('home');
 });
 
 Route::get('/jobs', function () {
-    return view('jobs',  [
-        'jobs' => Job::all()
+
+    $jobs = [
+        ['id' => 1, 'title' => 'Manager', 'salary' => '50,000'],
+        ['id' => 2, 'title' => 'Engineer', 'salary' => '40,000'],
+        ['id' => 3, 'title' => 'Technician', 'salary' => '32,000'],
+    ];
+
+    return view('jobs', [
+        'jobs' => $jobs
     ]);
-    
 });
 
-Route::get('/jobs/{id}', function ($id) use ($jobs) {
+Route::get('/jobs/{id}', function ($id) {
 
- $jobs=\Illuminate\Support\Arr::first($jobs, fn($job) => $job['id']);
-    return view('job', ['job' => $job]);
-}
+    $jobs = [
+        ['id' => 1, 'title' => 'Manager', 'salary' => '50,000'],
+        ['id' => 2, 'title' => 'Engineer', 'salary' => '40,000'],
+        ['id' => 3, 'title' => 'Technician', 'salary' => '32,000'],
+    ];
+
+    $job = Arr::first($jobs, fn($job) => $job['id'] == $id);
+
+    abort_if(!$job, 404);
+
+    return view('job', [
+        'job' => $job
+    ]);
+});
 
 Route::get('/contact', function () {
     return view('contact');
