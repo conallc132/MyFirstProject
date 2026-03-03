@@ -85,11 +85,11 @@
       <div class="border-t border-white/10 pt-4 pb-3">
         <div class="flex items-center px-5">
           <div class="shrink-0">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-10 rounded-full outline -outline-offset-1 outline-white/10" />
+            <img src="https://www.slantmagazine.com/wp-content/uploads/2018/11/meettherobinsons.jpg" alt="" class="size-20 rounded-full outline -outline-offset-1 outline-white/10" />
           </div>
           <div class="ml-3">
-            <div class="text-base/5 font-medium text-white">Tom Boy</div>
-            <div class="text-sm font-medium text-gray-400">tomBoy@example.com</div>
+            <div class="text-base/5 font-medium text-white">Jamie Boy</div>
+            <div class="text-sm font-medium text-gray-400">jamie.boy@example.com</div>
           </div>
           <button type="button" class="relative ml-auto shrink-0 rounded-full p-1 text-gray-400 hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
             <span class="absolute -inset-1.5"></span>
